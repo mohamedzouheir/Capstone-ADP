@@ -1,12 +1,13 @@
 package za.ac.cput.Factory;
 
+import jakarta.validation.Valid;
 import za.ac.cput.Domain.Admin;
 import za.ac.cput.Domain.Person;
 import za.ac.cput.Utils.AdminUtils;
 
 public class AdminFactory {
 
-    public static Admin buildAdmin(Person person, String adminId){
+    public static Admin buildAdmin(@Valid Person person, @Valid String adminId){
         if(AdminUtils.isValid(person) || AdminUtils.isValid(adminId)){
             return new Admin.Builder()
                     .setIdentity(person)
@@ -17,7 +18,7 @@ public class AdminFactory {
         }
     }
 
-    public static Admin buildAdmin(Person person){
+    public static Admin buildAdmin(@Valid Person person){
         if(AdminUtils.isValid(person)){
             return new Admin.Builder().setIdentity(person)
                     .setAdminId(AdminUtils.generateId())

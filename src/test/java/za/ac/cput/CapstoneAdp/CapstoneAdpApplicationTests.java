@@ -1,4 +1,4 @@
-package za.ac.cput.capstoneadp;
+package za.ac.cput.CapstoneAdp;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

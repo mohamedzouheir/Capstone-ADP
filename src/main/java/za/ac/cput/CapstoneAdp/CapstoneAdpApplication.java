@@ -1,4 +1,4 @@
-package za.ac.cput.capstoneadp;
+package za.ac.cput.CapstoneAdp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

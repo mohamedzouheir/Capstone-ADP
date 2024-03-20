@@ -1,10 +1,17 @@
 package za.ac.cput.Repository;
 
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Component;
 import za.ac.cput.Domain.Admin;
+import za.ac.cput.Domain.Person;
 
-public interface IAdminRepository extends JpaRepository<Admin, String> {
+import java.util.List;
+
+public interface IAdminRepository <T,Id>{
+    public T getUserByPerson(Person person);
+    public T getLoginDetails(Person person);
+    public T create(T obj);
+   public T read(Id id);
+    public T update(T obj);
+    public T delete(T obj);
+    public List<T> getAll();
+
 }

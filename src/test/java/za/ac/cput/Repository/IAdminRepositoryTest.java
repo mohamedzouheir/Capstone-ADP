@@ -1,5 +1,10 @@
 package za.ac.cput.Repository;
-
+/*
+    Admin.java
+    Admin Model class
+    Author: Logan Kalib Coghill 221534067
+    Date: 19 March 2024
+*/
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Order;

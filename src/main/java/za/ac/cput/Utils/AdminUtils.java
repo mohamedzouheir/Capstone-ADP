@@ -1,5 +1,10 @@
 package za.ac.cput.Utils;
-
+/*
+    Admin.java
+    Admin Model class
+    Author: Logan Kalib Coghill 221534067
+    Date: 19 March 2024
+*/
 import za.ac.cput.Domain.Person;
 
 import java.util.UUID;

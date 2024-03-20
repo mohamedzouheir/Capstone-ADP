@@ -2,7 +2,12 @@ package za.ac.cput.Factory;
 
 import za.ac.cput.Domain.Person;
 import za.ac.cput.Utils.PersonUtils;
-
+/*
+    Admin.java
+    Admin Model class
+    Author: Logan Kalib Coghill 221534067
+    Date: 19 March 2024
+*/
 public class PersonFactory {
     public static Person buildPerson(String name, String surname, String email, String password, String contactNo){
         if(PersonUtils.isValid(name)

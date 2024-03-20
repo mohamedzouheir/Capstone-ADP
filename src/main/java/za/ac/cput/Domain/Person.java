@@ -14,7 +14,7 @@ import java.util.Objects;
 @Entity
 public class Person {
     @Id
-    private long contactNo;
+    private String contactNo;
     private String name;
     private String surname;
     private String email;
@@ -30,7 +30,7 @@ public class Person {
         this.password = obj.password;
     }
 
-    public long getContactNo() {
+    public String getContactNo() {
         return contactNo;
     }
 
@@ -75,10 +75,10 @@ public class Person {
     }
 
     public static class Builder{
-        private long contactNo;
+        private String contactNo;
         private String name, surname, email, password;
 
-        public Builder setContactNo(long contactNo) {
+        public Builder setContactNo(String contactNo) {
             this.contactNo = contactNo;
             return this;
         }

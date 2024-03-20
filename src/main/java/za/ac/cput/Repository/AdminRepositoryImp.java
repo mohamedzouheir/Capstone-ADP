@@ -5,6 +5,7 @@ import za.ac.cput.Domain.Person;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class AdminRepositoryImp implements IAdminRepository<Admin,String>{
 
@@ -12,7 +13,8 @@ public class AdminRepositoryImp implements IAdminRepository<Admin,String>{
     @Override
     public Admin getUserByPerson(Person person) {
             for (Admin admin : FakeDAO) {
-                if(admin.getIdentity().equals(person)){
+                Person personDao = admin.getIdentity();
+                if(personDao.equals(person)){
                     return admin;
                 }
             }
@@ -38,16 +40,32 @@ public class AdminRepositoryImp implements IAdminRepository<Admin,String>{
 
     @Override
     public Admin read(String s) {
+        for(Admin admin: FakeDAO){
+            if(admin.getAdminId().equals(s)){
+                return admin;
+            }
+        }
         return null;
     }
 
     @Override
     public Admin update(Admin obj) {
+        for(Admin admin:FakeDAO){
+            if(admin.getAdminId().equals(obj.getAdminId())){
+                FakeDAO.remove(admin);
+                FakeDAO.add(obj);
+                return obj;
+            }
+        }
         return null;
     }
 
     @Override
     public Admin delete(Admin obj) {
+        if(obj != null){
+            if (FakeDAO.remove(obj))
+                return obj;
+        }
         return null;
     }
 

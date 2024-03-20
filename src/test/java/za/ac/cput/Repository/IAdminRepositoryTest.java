@@ -9,42 +9,39 @@ import za.ac.cput.Domain.Person;
 import za.ac.cput.Factory.AdminFactory;
 import za.ac.cput.Factory.PersonFactory;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 class IAdminRepositoryTest {
 
-    private IAdminRepository<Admin, String> adminRepository = new AdminRepositoryImp();
+    private IAdminRepository<Admin, String> adminRepository;
     @BeforeEach
     void setUp() {
-        Person person1 = PersonFactory.buildPerson("Logan","Coghill","logan@gmail.com","Password2435","36246343");
-        Person person2 = PersonFactory.buildPerson("333","555","logan213@gmail.com","Password653","2416375443");
-        Person person3 = PersonFactory.buildPerson("444","444","logan676@gmail.com","Password2435","02134656343");
-        Person person4 = PersonFactory.buildPerson("555","777","logan457@gmail.com","Password643","046542243");
-        Admin admin1 = AdminFactory.buildAdmin(person1);
-        Admin admin2 = AdminFactory.buildAdmin(person2);
-        Admin admin3 = AdminFactory.buildAdmin(person3);
-        Admin admin4 = AdminFactory.buildAdmin(person4);
-        adminRepository.create(admin1);
-        adminRepository.create(admin2);
-        adminRepository.create(admin3);
-        adminRepository.create(admin4);
+        if(adminRepository == null){
+            adminRepository = new AdminRepositoryImp();
+            for(int i=0; i<5;i++){
+                Person person1 = PersonFactory.buildPerson("Logan"+ i,"Coghill"+ i,"logan@gmail.com"+ i,"Password"+ i,"12345-"+ i);
+                Admin admin1 = AdminFactory.buildAdmin(person1);
+                adminRepository.create(admin1);
+            }
+        }
     }
 
     @Test
     @Order(2)
     void getUserByPerson() {
-        Admin admin = adminRepository.getUserByPerson(PersonFactory
-                .buildPerson("Logan","Coghill",
-                        "logan@gmail.com","Password2435",
-                        "36246343"));
+        List<Admin> person = adminRepository.getAll();
+        Admin admin = adminRepository.getUserByPerson(person.get(2).getIdentity());
         assertNotNull(admin);
         System.out.println(admin);
     }
 
     @Test
+    @Order(3)
     void getLoginDetails() {
-        Person person = PersonFactory.buildPerson("logan@gmail.com", "Password2435");
+        Person person = PersonFactory.buildPerson("logan@gmail.com2", "Password2");
         Admin admin = adminRepository.getLoginDetails(person);
         assertNotNull(admin);
         System.out.println(admin);
@@ -59,19 +56,38 @@ class IAdminRepositoryTest {
     }
 
     @Test
+    @Order(5)
     void read() {
+        String s = adminRepository.getAll().getFirst().getAdminId();
+        assertNotNull(adminRepository.read(s));
+        System.out.println(adminRepository.read(s));
     }
 
     @Test
+    @Order(6)
     void update() {
+        Person person = PersonFactory.buildPerson("test","test","test@email.com","Password2","074824024");
+        Admin updater = new Admin.Builder()
+                .copy(adminRepository.getAll().getFirst())
+                .setIdentity(person)
+                .build();
+
+        assertNotNull(adminRepository.update(updater));
+        System.out.println(adminRepository.getAll());
+        System.out.println(updater);
     }
 
     @Test
+    @Order(8)
     void delete() {
+        Admin admin = adminRepository.getAll().getLast();
+        System.out.println(adminRepository.getAll());
+        assertNotNull(adminRepository.delete(admin));
+        System.out.println(adminRepository.getAll());
     }
 
     @Test
-    @Order(3)
+    @Order(4)
     void getAll() {
         assertNotNull(adminRepository.getAll());
         System.out.println(adminRepository.getAll());

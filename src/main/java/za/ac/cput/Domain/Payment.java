@@ -5,7 +5,6 @@ package za.ac.cput.Domain;
     Author: Sheldon Luke Arendse 221190384
     Date: 21 March 2024
 */
-import jakarta.persistence.Id;
 import java.util.Date;
 import java.util.Objects;
 
@@ -22,7 +21,7 @@ public class Payment extends Order{
         this.payDate = obj.payDate;
     }
 
-    public String getPaymentID() {
+    public String getPaymentId() {
         return paymentId;
     }
 
@@ -42,12 +41,12 @@ public class Payment extends Order{
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Payment payment)) return false;
-        return Double.compare(getAmount(), payment.getAmount()) == 0 && Objects.equals(getPaymentID(), payment.getPaymentID()) && Objects.equals(getPayMethod(), payment.getPayMethod()) && Objects.equals(getPayDate(), payment.getPayDate());
+        return Double.compare(getAmount(), payment.getAmount()) == 0 && Objects.equals(getPaymentId(), payment.getPaymentId()) && Objects.equals(getPayMethod(), payment.getPayMethod()) && Objects.equals(getPayDate(), payment.getPayDate());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getPaymentID(), getPayMethod(), getAmount(), getPayDate());
+        return Objects.hash(getPaymentId(), getPayMethod(), getAmount(), getPayDate());
     }
 
     @Override

@@ -1,4 +1,5 @@
 package za.ac.cput.Domain;
+
 /*
 Customer.Java
 Customer Model Class
@@ -7,12 +8,14 @@ Date: 26 March 2024
  */
 
 import jakarta.persistence.*;
+
 import java.util.List;
 import java.util.Objects;
 
 //Create POJO - Customer Database Entity
 @Entity
 public class Customer {
+
     //Define relationship between Customer and Person
     @OneToOne
     private Person identity;
@@ -21,19 +24,21 @@ public class Customer {
     @Id
     private String customerId;
 
-  @OneToMany
-
+    //Define relationship between Customer and Order
+    @OneToMany
     private List<Order> orders;
-    protected Customer(){};
 
-    //Constructor for builder
+    protected Customer() {
+    }
 
+    //Constructor for Builder
     private Customer(Builder obj) {
         this.identity = obj.identity;
         this.customerId = obj.customerId;
         this.orders = obj.orders;
     }
 
+    //Getters
     public Person getIdentity() {
         return identity;
     }
@@ -68,12 +73,14 @@ public class Customer {
                 '}';
     }
 
-    public static class Builder{
+    //Creating Builder class with identical attributes
+    public static class Builder {
 
         private Person identity;
         private String customerId;
         private List<Order> orders;
 
+        //Setters
         public Builder setIdentity(Person identity) {
             this.identity = identity;
             return this;
@@ -89,14 +96,16 @@ public class Customer {
             return this;
         }
 
-        public Builder copy(Customer obj){
-            this.customerId= obj.customerId;
+        //Method to create builder with Customer object
+        public Builder copy(Customer obj) {
+            this.customerId = obj.customerId;
             this.identity = obj.identity;
             this.orders = obj.orders;
             return this;
         }
 
-        public Customer build(){
+        //Builds and returns new Customer object
+        public Customer build() {
             return new Customer(this);
         }
     }

@@ -13,16 +13,16 @@ public class OrderFactoryTest {
 
     @Test
     public void testCreateOrder() {
-        // Create sample data for testing
+
         List<Product> products = new ArrayList<>();
-        products.add(new Product("P001", "Red velvet cake", 100.0f));
-        products.add(new Product("P002", "Vanilla cake", 150.0f));
+        products.add(new Cake("Chocolate Cake", "Delicious chocolate cake", 150.0f, "Chocolate"));
+        products.add(new Cake("Vanilla Cake", "Classic vanilla cake", 120.0f, "Vanilla"));
 
         Shipping shipping = new Shipping("S001", "Standard Shipping");
         Payment payment = new Payment("PA001", "Credit Card");
-        Customer customer = new Customer("C001", "John Doe");
+        Customer customer = new Customer("C001", "Mo Zouhier");
 
-        float total = 250.0f;
+        float total = 270.0f;
         String orderNote = "Please expedite delivery";
 
         // Call the createOrder method of the OrderFactory
@@ -43,14 +43,14 @@ public class OrderFactoryTest {
         // Create sample data for testing
         String orderID = "O001";
         List<Product> products = new ArrayList<>();
-        products.add(new Product("P001", "Product 1", 100.0f));
-        products.add(new Product("P002", "Product 2", 150.0f));
+        products.add(new Cake("Red Velvet Cake", "Rich and moist red velvet cake", 180.0f, "Red Velvet"));
+        products.add(new Cake("Carrot Cake", "Delicious carrot cake with cream cheese frosting", 200.0f, "Carrot"));
 
         Shipping shipping = new Shipping("S001", "Standard Shipping");
         Payment payment = new Payment("PA001", "Credit Card");
         Customer customer = new Customer("C001", "John Doe");
 
-        float total = 250.0f;
+        float total = 380.0f;
 
         // Call the createOrderWithID method of the OrderFactory
         Order order = OrderFactory.createOrderWithID(orderID, products, shipping, payment, customer, total);

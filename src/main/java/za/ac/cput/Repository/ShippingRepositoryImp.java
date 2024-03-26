@@ -1,4 +1,10 @@
 package za.ac.cput.Repository;
+/*
+    ShippingRepositoryImp.java
+    ShippingRepositoryImp class
+    Author: Uzair Rabin 221013245
+    Date: 26 March 2024
+*/
 import za.ac.cput.Domain.Shipping;
 import java.util.*;
 

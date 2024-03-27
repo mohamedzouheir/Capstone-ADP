@@ -13,10 +13,10 @@ import java.util.Objects;
 
 @Entity
 public class Person {
-    @Id
     private String contactNo;
     private String name;
     private String surname;
+    @Id
     private String email;
     private String password;
 

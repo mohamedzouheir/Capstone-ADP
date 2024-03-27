@@ -20,9 +20,9 @@ public class Order {
         this.customerID = builder.customerID;
         this.total = builder.total;
         this.orderNote = builder.orderNote;
-
-
     }
+
+
     //Builder class for the Order entity
     public static class Builder{
         private String orderID;

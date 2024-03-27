@@ -1,6 +1,6 @@
 package za.ac.cput.Repository;
 /*
-    Payment Factory Class
+    Payment Interface Repository Class
     Author: Sheldon Luke Arendse 221190384
     Date: 21 March 2024
 */

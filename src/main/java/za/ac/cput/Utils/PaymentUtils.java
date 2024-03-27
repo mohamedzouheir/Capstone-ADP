@@ -1,6 +1,6 @@
 package za.ac.cput.Utils;
 /*
-    Payment Model Class
+    Payment Util Class
     Author: Sheldon Luke Arendse 221190384
     Date: 21 March 2024
 */

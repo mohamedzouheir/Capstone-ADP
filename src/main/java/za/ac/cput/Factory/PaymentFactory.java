@@ -13,20 +13,23 @@ import java.util.Date;
 
 public class PaymentFactory {
 
-    public static Payment buildPayment(@Valid Payment paymentObj, @Valid String paymentId, double amount, Date payDate, String payMethod) {
-        if (PaymentUtils.isValid(paymentObj) || PaymentUtils.isNotBlankOrEmpty(paymentId)) {
+    // Build payment object with an existing payment ID
+    public static Payment buildPayment(@Valid String paymentId, double amount, Date payDate, String payMethod) {
+        if (PaymentUtils.isNotBlankOrEmpty(payMethod) || PaymentUtils.isNotBlankOrEmpty(paymentId)) {
             return new Payment.Builder()
                     .setPaymentId(paymentId)
                     .setAmount(amount)
                     .setPayDate(payDate)
                     .setPayMethod(payMethod)
                     .build();
+        } else {
+            return null;
         }
-        return null;
     }
 
-    public static Payment buildPayment(String paymentId, double amount, Date payDate, String payMethod) {
-        if (PaymentUtils.isNullOrEmpty(paymentId)) {
+    // Generate a new payment ID
+    public static Payment buildPayment(double amount, Date payDate, String payMethod) {
+        if (PaymentUtils.isNotBlankOrEmpty(payMethod)) {
             return new Payment.Builder()
                     .setPaymentId(PaymentUtils.generateId())
                     .setAmount(amount)
@@ -34,6 +37,6 @@ public class PaymentFactory {
                     .setPayMethod(payMethod)
                     .build();
         }
-        return null;
+            return null;
     }
 }

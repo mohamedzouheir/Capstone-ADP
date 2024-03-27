@@ -12,11 +12,11 @@ public class Order {
     private String orderNote;
 
     //Constructor that takes Builder Object
-    private Order (Builder builder){
+    private Order(Builder builder) {
         this.orderID = builder.orderID;
-        this.products =builder.products;
-        this.shippingID=builder.shippingID;
-        this.paymentID= builder.paymentID;
+        this.products = builder.products;
+        this.shippingID = builder.shippingID;
+        this.paymentID = builder.paymentID;
         this.customerID = builder.customerID;
         this.total = builder.total;
         this.orderNote = builder.orderNote;
@@ -24,7 +24,7 @@ public class Order {
 
 
     //Builder class for the Order entity
-    public static class Builder{
+    public static class Builder {
         private String orderID;
         private List<Product> products;
         private Shipping shippingID;
@@ -34,25 +34,26 @@ public class Order {
         private String orderNote;
 
         // set orderID and return the Builder object
-        public Builder orderID (String orderID){
-          this.orderID = orderID;
-          return this;
+        public Builder orderID(String orderID) {
+            this.orderID = orderID;
+            return this;
 
         }
 
         // set products  and return the Builder object
-        public Builder products (List<Product> products){
-           this.products = products;
-           return this;
+        public Builder products(List<Product> products) {
+            this.products = products;
+            return this;
         }
 
         // set shippingID and return Builder object
 
-        public Builder shippingID(Shipping shippingID){
+        public Builder shippingID(Shipping shippingID) {
             this.shippingID = shippingID;
             return this;
 
         }
+
         // set the paymentID and return the Builder object
         public Builder paymentID(Payment paymentID) {
             this.paymentID = paymentID;
@@ -77,12 +78,44 @@ public class Order {
             return this;
         }
 
+        public Builder copy(Order order) {
+            Builder copiedBuilder = new Builder();
+            copiedBuilder.orderID = this.orderID;
+            copiedBuilder.products = this.products;
+            copiedBuilder.shippingID = this.shippingID;
+            copiedBuilder.paymentID = this.paymentID;
+            copiedBuilder.customerID = this.customerID;
+            copiedBuilder.total = this.total;
+            copiedBuilder.orderNote = this.orderNote;
+            return copiedBuilder;
+        }
+
+
         // construct and return the final Order object
         public Order build() {
             return new Order(this);
         }
-    }
 
+
+
+        public void setOrderNote(String orderNote) {
+            this.orderNote = orderNote;
+        }
+
+
+        @Override
+        public String toString() {
+            return "Order{" +
+                    "orderID='" + orderID + '\'' +
+                    ", products=" + products +
+                    ", shippingID=" + shippingID +
+                    ", paymentID=" + paymentID +
+                    ", customerID=" + customerID +
+                    ", total=" + total +
+                    ", orderNote='" + orderNote + '\'' +
+                    '}';
+        }
+    }
     public String getOrderID() {
         return orderID;
     }
@@ -135,21 +168,5 @@ public class Order {
         return orderNote;
     }
 
-    public void setOrderNote(String orderNote) {
-        this.orderNote = orderNote;
-    }
-
-    @Override
-    public String toString() {
-        return "Order{" +
-                "orderID='" + orderID + '\'' +
-                ", products=" + products +
-                ", shippingID=" + shippingID +
-                ", paymentID=" + paymentID +
-                ", customerID=" + customerID +
-                ", total=" + total +
-                ", orderNote='" + orderNote + '\'' +
-                '}';
-    }
 }
 

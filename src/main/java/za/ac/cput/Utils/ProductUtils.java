@@ -2,6 +2,11 @@ package za.ac.cput.Utils;
 
 import java.util.UUID;
 
+/*
+    Author: Mohamed Zouheir 221215794
+    Date: 27 March 2024
+*/
+
 public class ProductUtils {
     public static String generateId(){
         return UUID.randomUUID().toString();

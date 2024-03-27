@@ -1,5 +1,10 @@
 package za.ac.cput.Factory;
 
+/*
+    Author: Mohamed Zouheir 221215794
+    Date: 27 March 2024
+*/
+
 import za.ac.cput.Domain.Product;
 import za.ac.cput.Utils.ProductUtils;
 

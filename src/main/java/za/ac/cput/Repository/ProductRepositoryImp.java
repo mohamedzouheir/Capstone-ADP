@@ -5,6 +5,11 @@ import za.ac.cput.Domain.Product;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+    Author: Mohamed Zouheir 221215794
+    Date: 27 March 2024
+*/
+
 public class ProductRepositoryImp implements IProductRepository<Product, String> {
     private final List<Product> list = new ArrayList();
 

@@ -1,5 +1,10 @@
 package za.ac.cput.Domain;
 
+/*
+    Author: Mohamed Zouheir 221215794
+    Date: 27 March 2024
+*/
+
 public class Product {
     private String name;
     private String productId;

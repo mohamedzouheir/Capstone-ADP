@@ -8,13 +8,18 @@ package za.ac.cput.Domain;
 import java.util.Date;
 import java.util.Objects;
 
-public class Payment extends Order{
+public class Payment{
     private final String paymentId;
     private final String payMethod;
     private final double amount;
     private final Date payDate;
 
     public Payment() {
+        this.paymentId =null;
+        this.payMethod =null;
+        this.amount=0;
+        this.payDate=null;
+
     }
 
     private Payment(Builder obj) {

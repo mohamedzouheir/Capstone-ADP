@@ -1,8 +1,8 @@
 package za.ac.cput.Factory;
 
 /*
-Customer.Java
-Customer Model Class
+CustomerFactoryTest.Java
+Customer Factory Test Class
 Author: Aa'ishah Van Witt
 Date: 26 March 2024
  */

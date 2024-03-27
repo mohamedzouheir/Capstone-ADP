@@ -1,8 +1,8 @@
 package za.ac.cput.Repository;
 
 /*
-Customer.Java
-Customer Model Class
+ICustomerRepositoryTest.Java
+Customer Repository Test Class
 Author: Aa'ishah Van Witt
 Date: 26 March 2024
 */

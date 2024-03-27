@@ -24,9 +24,6 @@ public class Customer {
     @Id
     private String customerId;
 
-    //Define relationship between Customer and Order
-    @OneToMany
-    private List<Order> orders;
 
     protected Customer() {
     }
@@ -35,7 +32,6 @@ public class Customer {
     private Customer(Builder obj) {
         this.identity = obj.identity;
         this.customerId = obj.customerId;
-        this.orders = obj.orders;
     }
 
     //Getters
@@ -47,21 +43,18 @@ public class Customer {
         return customerId;
     }
 
-    public List<Order> getOrders() {
-        return orders;
-    }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Customer customer = (Customer) o;
-        return Objects.equals(identity, customer.identity) && Objects.equals(customerId, customer.customerId) && Objects.equals(orders, customer.orders);
+        return Objects.equals(identity, customer.identity) && Objects.equals(customerId, customer.customerId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(identity, customerId, orders);
+        return Objects.hash(identity, customerId);
     }
 
     @Override
@@ -69,7 +62,6 @@ public class Customer {
         return "Customer{" +
                 "identity=" + identity +
                 ", customerId='" + customerId + '\'' +
-                ", orders=" + orders +
                 '}';
     }
 
@@ -91,16 +83,11 @@ public class Customer {
             return this;
         }
 
-        public Builder setOrders(List<Order> orders) {
-            this.orders = orders;
-            return this;
-        }
 
         //Method to create builder with Customer object
         public Builder copy(Customer obj) {
             this.customerId = obj.customerId;
             this.identity = obj.identity;
-            this.orders = obj.orders;
             return this;
         }
 

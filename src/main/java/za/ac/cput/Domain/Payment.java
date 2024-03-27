@@ -14,6 +14,9 @@ public class Payment extends Order{
     private final double amount;
     private final Date payDate;
 
+    public Payment() {
+    }
+
     private Payment(Builder obj) {
         this.paymentId = obj.paymentId;
         this.payMethod = obj.payMethod;

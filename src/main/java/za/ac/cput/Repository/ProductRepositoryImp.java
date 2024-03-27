@@ -1,12 +1,11 @@
 package za.ac.cput.Repository;
 
-import za.ac.cput.Domain.Admin;
 import za.ac.cput.Domain.Product;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProductRepository implements IProductRepository<Product, String> {
+public class ProductRepositoryImp implements IProductRepository<Product, String> {
     private final List<Product> list = new ArrayList();
 
     @Override

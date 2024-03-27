@@ -1,4 +1,10 @@
 package za.ac.cput.Factory;
+/*
+    ShippingFactoryTest.java
+    ShippingFactoryTest class
+    Author: Uzair Rabin 221013245
+    Date: 26 March 2024
+*/
 
 import org.junit.jupiter.api.Test;
 import za.ac.cput.Domain.Shipping;

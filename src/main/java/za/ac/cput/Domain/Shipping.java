@@ -1,4 +1,10 @@
 package za.ac.cput.Domain;
+/*
+    Shipping.java
+    Shipping Model class
+    Author: Uzair Rabin 221013245
+    Date: 26 March 2024
+*/
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

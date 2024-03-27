@@ -52,11 +52,11 @@ public class Payment extends Order{
     @Override
     public String toString() {
         return "Payment{" +
-                "paymentID='" + paymentId + '\'' +
-                ", payMethod='" + payMethod + '\'' +
-                ", amount=" + amount +
-                ", payDate=" + payDate +
-                '}';
+                "PaymentID = '" + paymentId + '\'' +
+                ", Pay Method = '" + payMethod + '\'' +
+                ", amount = " + amount +
+                ", payDate=  " + payDate +
+                '}' + "\n";
     }
 
     public static class Builder {

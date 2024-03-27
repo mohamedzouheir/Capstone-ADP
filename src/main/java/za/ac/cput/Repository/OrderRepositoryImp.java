@@ -23,7 +23,7 @@ public class OrderRepositoryImp implements IOrderRepository<Order,String>{
     @Override
     public Order read(String id) {
         for (Order order : orders) {
-            if (order.getOrderId().equals(id)) {
+            if (order.getOrderID().equals(id)) {
                 return order;
             }
         }
@@ -34,7 +34,7 @@ public class OrderRepositoryImp implements IOrderRepository<Order,String>{
     public Order update(Order updatedOrder) {
         for (int i = 0; i < orders.size(); i++) {
             Order order = orders.get(i);
-            if (order.getOrderId().equals(updatedOrder.getOrderId())) {
+            if (order.getOrderID().equals(updatedOrder.getOrderID())) {
                 orders.set(i, updatedOrder);
                 return updatedOrder;
             }
@@ -44,7 +44,7 @@ public class OrderRepositoryImp implements IOrderRepository<Order,String>{
 
     @Override
     public Order delete(Order orderToDelete) {
-        Order foundOrder = read(orderToDelete.getOrderId());
+        Order foundOrder = read(orderToDelete.getOrderID());
         if (foundOrder != null) {
             orders.remove(foundOrder);
         }

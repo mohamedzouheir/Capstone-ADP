@@ -1,14 +1,13 @@
 package za.ac.cput.Repository;
 
 /*
-Customer.Java
-Customer Model Class
+CustomerRepositoryImp.Java
+Customer Repository Implementation Class
 Author: Aa'ishah Van Witt
 Date: 26 March 2024
  */
 
 import za.ac.cput.Domain.Customer;
-import za.ac.cput.Domain.Order;
 import za.ac.cput.Domain.Person;
 
 import java.util.ArrayList;
@@ -38,11 +37,6 @@ public class CustomerRepositoryImp implements ICustomerRepository<Customer, Stri
             }
         }
         return null;
-    }
-
-    @Override
-    public List<Order> getAllOrders(Customer obj){
-return obj.getOrders();
     }
 
 

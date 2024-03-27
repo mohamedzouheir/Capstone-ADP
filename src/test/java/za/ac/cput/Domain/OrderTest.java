@@ -42,7 +42,7 @@ class OrderTest {
         for (int i = 0; i < 1000000; i++) {
             products.add(new Product.Builder()
                     .setName("Brownies " + i)
-                    .setPrice(10.0)
+                    .setPrice(10.0F)
                     .build());
         }
 
@@ -93,9 +93,9 @@ class OrderTest {
 
         Customer customer = new Customer.Builder()
                 .setIdentity(new Person.Builder()
-                        .setPhoneNumber("0829908216")
-                        .setFirstName("Aaniquah")
-                        .setLastName("Dicks")
+                        .setContactNo("0829908216")
+                        .setName("Aaniquah")
+                        .setSurname("Dicks")
                         .setEmail("dicksaaniquah@gmail.com")
                         .setPassword("Fat&1")
                         .build())
@@ -154,9 +154,9 @@ class OrderTest {
 
         Customer customer = new Customer.Builder()
                 .setIdentity(new Person.Builder()
-                        .setPhoneNumber("0829908216")
-                        .setFirstName("Aaniquah")
-                        .setLastName("Dicks")
+                        .setContactNo("0829908216")
+                        .setName("Aaniquah")
+                        .setSurname("Dicks")
                         .setEmail("dicksaaniquah@gmail.com")
                         .setPassword("Fat&1")
                         .build())

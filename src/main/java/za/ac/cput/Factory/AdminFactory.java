@@ -1,7 +1,7 @@
 package za.ac.cput.Factory;
 /*
-    Admin.java
-    Admin Model class
+    AdminFactory.java
+    Admin Factory class
     Author: Logan Kalib Coghill 221534067
     Date: 19 March 2024
 */

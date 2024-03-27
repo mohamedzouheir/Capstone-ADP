@@ -1,4 +1,10 @@
 package za.ac.cput.Domain;
+/*
+    Shipping.java
+    Shipping Model class
+    Author: Uzair Rabin 221013245
+    Date: 26 March 2024
+*/
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -17,7 +23,7 @@ public class Shipping {
     private int postalCode;
     private String trackStatus;
 
-    protected Shipping() {
+    public Shipping() {
 
     }
 

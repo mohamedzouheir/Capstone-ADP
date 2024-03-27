@@ -14,6 +14,9 @@ public class Payment extends Order{
     private final double amount;
     private final Date payDate;
 
+    public Payment() {
+    }
+
     private Payment(Builder obj) {
         this.paymentId = obj.paymentId;
         this.payMethod = obj.payMethod;
@@ -52,11 +55,11 @@ public class Payment extends Order{
     @Override
     public String toString() {
         return "Payment{" +
-                "paymentID='" + paymentId + '\'' +
-                ", payMethod='" + payMethod + '\'' +
-                ", amount=" + amount +
-                ", payDate=" + payDate +
-                '}';
+                "PaymentID = '" + paymentId + '\'' +
+                ", Pay Method = '" + payMethod + '\'' +
+                ", amount = " + amount +
+                ", payDate=  " + payDate +
+                '}' + "\n";
     }
 
     public static class Builder {

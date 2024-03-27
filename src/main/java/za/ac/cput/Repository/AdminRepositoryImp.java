@@ -1,7 +1,7 @@
 package za.ac.cput.Repository;
 /*
-    Admin.java
-    Admin Model class
+    AdminRepository.java
+    Admin Repository class
     Author: Logan Kalib Coghill 221534067
     Date: 19 March 2024
 */

@@ -1,8 +1,8 @@
 package za.ac.cput.Repository;
 
 /*
-    Admin.java
-    Admin Model class
+    IAdminRepository.java
+    Admin Repository interface class
     Author: Logan Kalib Coghill 221534067
     Date: 19 March 2024
 */

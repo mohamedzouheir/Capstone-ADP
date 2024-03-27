@@ -1,4 +1,10 @@
 package za.ac.cput.Factory;
+/*
+    ShippingFactory.java
+    ShippingFactory class
+    Author: Uzair Rabin 221013245
+    Date: 26 March 2024
+*/
 import za.ac.cput.Domain.Shipping;
 import za.ac.cput.Utils.ShippingUtils;
 public class ShippingFactory {

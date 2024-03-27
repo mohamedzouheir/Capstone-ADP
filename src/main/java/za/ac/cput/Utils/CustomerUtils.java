@@ -1,8 +1,8 @@
 package za.ac.cput.Utils;
 
 /*
-Customer.Java
-Customer Model Class
+CustomerUtils.Java
+Customer Utils Class
 Author: Aa'ishah Van Witt
 Date: 26 March 2024
  */
@@ -21,10 +21,6 @@ public class CustomerUtils {
 
     public static Boolean isValid(String obj) {
         return !obj.isEmpty() || !obj.isBlank();
-    }
-
-    public static Boolean isValid(List<Order> obj) {
-        return obj != null;
     }
 
     public static String generateId() {

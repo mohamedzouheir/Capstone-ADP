@@ -1,7 +1,7 @@
 package za.ac.cput.Factory;
 /*
-    Admin.java
-    Admin Model class
+    AdminFactoryTest.java
+    AdminFactory Test class
     Author: Logan Kalib Coghill 221534067
     Date: 19 March 2024
 */

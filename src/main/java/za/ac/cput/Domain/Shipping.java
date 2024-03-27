@@ -23,7 +23,7 @@ public class Shipping {
     private int postalCode;
     private String trackStatus;
 
-    protected Shipping() {
+    public Shipping() {
 
     }
 

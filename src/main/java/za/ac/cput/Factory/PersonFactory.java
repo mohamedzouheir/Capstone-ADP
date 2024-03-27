@@ -3,8 +3,8 @@ package za.ac.cput.Factory;
 import za.ac.cput.Domain.Person;
 import za.ac.cput.Utils.PersonUtils;
 /*
-    Admin.java
-    Admin Model class
+    PersonFactory.java
+    Person Factory class
     Author: Logan Kalib Coghill 221534067
     Date: 19 March 2024
 */

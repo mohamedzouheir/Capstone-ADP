@@ -1,6 +1,12 @@
 package za.ac.cput.Repository;
 
-import za.ac.cput.Domain.Admin;
+/*
+    PersonRepositoryImp.java
+    Person repository Implementation class
+    Author: Logan Kalib Coghill 221534067
+    Date: 19 March 2024
+*/
+
 import za.ac.cput.Domain.Person;
 
 import java.util.ArrayList;

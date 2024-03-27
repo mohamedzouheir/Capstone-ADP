@@ -1,5 +1,10 @@
 package za.ac.cput.Repository;
-
+/*
+    IPersonRepositoryTest.java
+    Person repository Test class
+    Author: Logan Kalib Coghill 221534067
+    Date: 19 March 2024
+*/
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import za.ac.cput.Domain.Person;

@@ -1,7 +1,7 @@
 package za.ac.cput.Domain;
 /*
-    Admin.java
-    Admin Model class
+    Person.java
+    Person Model class
     Author: Logan Kalib Coghill 221534067
     Date: 19 March 2024
 */
